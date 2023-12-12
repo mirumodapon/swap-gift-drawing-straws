@@ -7,9 +7,7 @@ const object = {};
 
 app.post('/tags/:name', function (req, res) {
   const name = req.params.name;
-  const body = req.body;
-
-  object[name] = body;
+  object[name] = req.body.tags;
 
   return res.send('OK');
 });

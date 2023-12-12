@@ -28,7 +28,13 @@
         const tag2 = document.querySelector('#tag2').value;
         const tag3 = document.querySelector('#tag3').value;
 
-        fetch(`tags/${name}`, { method: 'POST' }).then(() => {
+        fetch(`tags/${name}`, {
+          method: 'POST',
+          body: JSON.stringify({ tags: [tag1, tag2, tag3] }),
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        }).then(() => {
           alert('OK');
         });
       }
