@@ -12,8 +12,12 @@ app.post('/tags/:name', function (req, res) {
   return res.send('OK');
 });
 
+app.get('/tag', function (req, res) {
+  res.json(object);
+});
+
 app.get('/tags', function (req, res) {
-  res.send(object);
+  res.sendFile('tags.html', { root: __dirname });
 });
 
 app.get('/', function (req, res) {
